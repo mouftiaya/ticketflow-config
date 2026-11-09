@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+ticketflow:
+  events:
+    max-page-size: 50
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/event_db
+    username: ticketflow
+    # Le mot de passe n'est volontairement PAS ici : variable d'environnement SPRING_DATASOURCE_PASSWORD
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true

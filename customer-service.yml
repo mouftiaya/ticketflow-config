@@ -9,3 +9,15 @@ management:
 
 ticketflow:
   message: "Bienvenue dans TicketFlow - configuration v3"
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/customer_db
+    username: ticketflow
+    # Mot de passe : variable d'environnement SPRING_DATASOURCE_PASSWORD
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
