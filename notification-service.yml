@@ -1,0 +1,17 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/notification_db
+    username: ticketflow
+    # Mot de passe : variable d'environnement SPRING_DATASOURCE_PASSWORD
+  kafka:
+    bootstrap-servers: localhost:9094
+
+notification:
+  email:
+    mode: log
+  delivery:
+    max-attempts: 5
+    retry-base-delay: 30s

@@ -32,6 +32,12 @@ spring:
                 - Path=/api/bookings/**
               filters:
                 - AddResponseHeader=X-Served-By, api-gateway
+            - id: payment-service
+              uri: lb://payment-service
+              predicates:
+                - Path=/api/payments/**
+              filters:
+                - AddResponseHeader=X-Served-By, api-gateway
 
 management:
   endpoint:
